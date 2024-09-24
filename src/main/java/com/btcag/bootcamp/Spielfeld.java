@@ -5,11 +5,20 @@ public class Spielfeld {
 
         int x = 0;
         int y = 0;
-
-        System.out.println("[x][ ][ ][ ][ ][ ][ ][ ][ ][ ]");
+        int positionX = 0;
+        int positionY = 0;
 
         while (y < 14) {
             while (x < 10) {
+                while (x == positionX) {
+                    while (y == positionY) {
+                        System.out.print("[x]");
+                        y = y + 1;
+                        x = x + 1;
+                    }
+                    x = x + 1;
+                    System.out.print("[ ]");
+                }
                 System.out.print("[ ]");
                 x = x + 1;
             }
@@ -18,6 +27,7 @@ public class Spielfeld {
             y = y + 1;
         }
 
-        System.out.println("Dein Roboter befindet sich auf der Position 1/1.");
+
+        System.out.println("Dein Roboter befindet sich auf der Position " + positionX + "/" + positionY);
     }
 }
